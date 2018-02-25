@@ -1,3 +1,5 @@
+package com.pholak.scalaproblems
+
 import org.scalatest.{FunSuite, Matchers}
 
 class P04Test extends FunSuite with Matchers {

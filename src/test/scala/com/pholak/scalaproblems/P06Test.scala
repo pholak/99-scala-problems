@@ -1,3 +1,5 @@
+package com.pholak.scalaproblems
+
 import org.scalatest.FunSuite
 
 class P06Test extends FunSuite {

@@ -1,3 +1,5 @@
+package com.pholak.scalaproblems
+
 import org.scalatest.{FlatSpec, Matchers}
 
 class P01Test extends FlatSpec with Matchers {
