@@ -30,6 +30,12 @@ object Arithmetic {
     }
   }
 
+  implicit class P36(val number: Int) extends AnyVal {
+
+    def primeFactorMultiplicity(): List[(Int, Int)] = {
+      number.primeFactors().groupBy(i=>i).mapValues(_.size).toSeq.sortBy(_._1).toList
+    }
+  }
 }
 
 
