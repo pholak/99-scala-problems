@@ -21,7 +21,6 @@ object Arithmetic {
     def primeFactors(): List[Int] = {
       def primeFactorsR(n: Int, primes: Stream[Int]): List[Int] = {
         if (n == 1) List()
-        else if (n % 2 == 0) 2 :: primeFactorsR(n, primes)
         else if (n % primes.head == 0) primes.head :: primeFactorsR(n / primes.head, primes)
         else primeFactorsR(n, primes.drop(1))
       }
