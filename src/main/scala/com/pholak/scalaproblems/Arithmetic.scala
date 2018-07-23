@@ -33,9 +33,19 @@ object Arithmetic {
   implicit class P36(val number: Int) extends AnyVal {
 
     def primeFactorMultiplicity(): List[(Int, Int)] = {
-      number.primeFactors().groupBy(i=>i).mapValues(_.size).toSeq.sortBy(_._1).toList
+      number.primeFactors().groupBy(i => i).mapValues(_.size).toSeq.sortBy(_._1).toList
     }
   }
+
+  implicit class P40(val number: Int) extends AnyVal {
+    def goldbach(): (Integer, Integer) = {
+      val primes = new P39().listPrimesInRange(0 to number)
+      primes.combinations(2).toList.filter(pair => pair.sum == number).head match {
+        case List(a, b) => (a, b)
+      }
+    }
+  }
+
 }
 
 
