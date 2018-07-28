@@ -11,4 +11,9 @@ class P31Test extends FunSuite with Matchers {
     assert(result)
   }
 
+  test("Should determine that 1 isn't prime") {
+    val result = 1.isPrime
+    assert(!result)
+  }
+
 }

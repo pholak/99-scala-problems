@@ -5,7 +5,7 @@ import com.pholak.scalaproblems.P32.gcd
 object Arithmetic {
 
   implicit class P31(val number: Int) extends AnyVal {
-    def isPrime: Boolean = !((2 until number - 1) exists (number % _ == 0))
+    def isPrime: Boolean = (number > 1) && !((2 until number - 1) exists (number % _ == 0))
   }
 
   implicit class P33(val num1: Int) extends AnyVal {
@@ -39,7 +39,7 @@ object Arithmetic {
 
   implicit class P40(val number: Int) extends AnyVal {
     def goldbach(): (Integer, Integer) = {
-      val primes = new P39().listPrimesInRange(0 to number)
+      val primes = new P39().listPrimesInRange(2 to number)
       primes.combinations(2).toList.filter(pair => pair.sum == number).head match {
         case List(a, b) => (a, b)
       }
